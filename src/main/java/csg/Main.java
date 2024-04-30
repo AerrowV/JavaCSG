@@ -11,11 +11,16 @@ public class Main {
         JavaCSG csg = JavaCSGFactory.createNoCaching();
 
         Cross cross = new Cross(30,5,3);
-        Circle circle = new Circle(30,10, 1);
+        Circle circle = new Circle(20,10, 3);
+        Board board = new Board(90, 10, 3);
+
+        Geometry3D bor = board.getBoardGeometry(csg);
         Geometry3D res = cross.getGeometry3D(csg);
         Geometry3D circleRes = circle.getGeometry3D(csg);
-        csg.view(circleRes);
 
+        csg.view(bor);
+        // csg.view(res);
+        // csg.view(circleRes);
 
         /*
 
